@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aucation (software)", "Aucation (software)\Aucation (software).csproj", "{C81C366F-D9EE-477E-8C39-A35805BBDD4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C81C366F-D9EE-477E-8C39-A35805BBDD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81C366F-D9EE-477E-8C39-A35805BBDD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81C366F-D9EE-477E-8C39-A35805BBDD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81C366F-D9EE-477E-8C39-A35805BBDD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3D1F3DC-E0FF-4AFE-83A6-EFACAA6CC030}
+	EndGlobalSection
+EndGlobal
