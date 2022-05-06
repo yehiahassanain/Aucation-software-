@@ -103,4 +103,32 @@ values (6,20191500623)
 insert into relation_user_admin (user_id_fk,admin_id_fk)
 values (7,20691500783)
 
+
+--adding Aucation_price,credit_card,buying_item
+alter table AUCATION_USER 
+add (bying_item varchar2(30) ,
+Aucation_price number(20),credit_card varchar2(30)  unique);
+
+update AUCATION_USER  set bying_item = 'Watch' WHERE user_id = 1;
+update AUCATION_USER  set Aucation_price =1000,credit_card='5078021159253488' WHERE user_id = 1;
+update AUCATION_USER  set bying_item='Tv',Aucation_price =10000,credit_card='5078021159258403' WHERE user_id = 2;
+update AUCATION_USER  set bying_item='gold_plate',Aucation_price =25000,credit_card='5078021159253408' WHERE user_id = 3;
+update AUCATION_USER  set bying_item='fridge',Aucation_price =3000,credit_card='5078021859253408' WHERE user_id = 4;
+update AUCATION_USER  set bying_item='house',Aucation_price =3000000,credit_card='8078021159253408' WHERE user_id = 5;
+update AUCATION_USER  set bying_item='painting',Aucation_price =10000,credit_card='5078028159553408' WHERE user_id = 6;
+update AUCATION_USER  set bying_item=' Tv',Aucation_price =20000,credit_card='5078021159258406' WHERE user_id = 7;
+
+
+--Adding days
+alter table AUCATION_USER 
+add (days varchar2(20));
+
+update AUCATION_USER  set days = 'sunday' WHERE user_id = 1
+update AUCATION_USER  set days = 'monday' WHERE user_id = 2
+update AUCATION_USER  set days = 'wednesday' WHERE user_id = 3
+update AUCATION_USER  set days = 'sunday' WHERE user_id = 4
+update AUCATION_USER  set days = 'monday' WHERE user_id = 5
+update AUCATION_USER  set days = 'monday' WHERE user_id = 6
+update AUCATION_USER  set days = 'wednesday' WHERE user_id = 7
+
 --desc advertiser;
