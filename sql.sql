@@ -7,6 +7,7 @@ alter table Aucation_user
 add (adv_id number(20),
 constraint adv_fk foreign key (adv_id) references advertiser(advertiser_id));
 
+
 create table advertiser (name varchar2(20) NOT NULL,
 advertiser_id number(20),
 password varchar2(20) unique not null,
@@ -131,4 +132,45 @@ update AUCATION_USER  set days = 'monday' WHERE user_id = 5
 update AUCATION_USER  set days = 'monday' WHERE user_id = 6
 update AUCATION_USER  set days = 'wednesday' WHERE user_id = 7
 
+
+CREATE TABLE PRODUCT 
+   (	
+   NAME VARCHAR2(20), 
+   PRICE NUMBER, 
+	S_DATE DATE, 
+	END DATE, 
+	DESCRIPTION VARCHAR2(70), 
+	ID NUMBER, 
+	ADVERTISER_ID NUMBER
+   );
+-------------------------
+insert into product ( NAME, PRICE, S_DATE, END, DESCRIPTION, ID, ADVERTISER_ID ) 
+VALUES ( 'book',	50,	'05-MAY-22',	'04-JUL-22' , '' ,	7,	4 );
+insert into product ( NAME, PRICE, S_DATE, END, DESCRIPTION, ID, ADVERTISER_ID ) 
+VALUES ( 'dress',	150,	'05-MAY-22',	'15-AUG-22' , 'blue _ size xl' ,	1,	2 );
+insert into product ( NAME, PRICE, S_DATE, END, DESCRIPTION, ID, ADVERTISER_ID ) 
+VALUES ( 'car',	1500,	'20-MAY-22',	'05-JUN-22' , 'Toyota' ,	2,	3 );
+insert into product ( NAME, PRICE, S_DATE, END, DESCRIPTION, ID, ADVERTISER_ID ) 
+VALUES ( 'tv',	300,	'20-APR-22',	'15-MAY-22' , 'smart tv' ,	3,	4 );
+insert into product ( NAME, PRICE, S_DATE, END, DESCRIPTION, ID, ADVERTISER_ID ) 
+VALUES ( 'phono',	700,	'20-MAY-22',	'10-JUN-22' , 'iphono' ,	4,	2 );
+insert into product ( NAME, PRICE, S_DATE, END, DESCRIPTION, ID, ADVERTISER_ID ) 
+VALUES ( 'T_shirt',	300,	'08-MAY-22',	'03-JUN-22' , 'black' ,	5,	2 );
+
+
+CREATE OR REPLACE PROCEDURE DISPLAY_ITEMS 
+(items out sys_refcursor) 
+AS
+BEGIN
+  OPEN items for SELECT id FROM product ;
+END DISPLAY_ITEMS;
+/
+----------
+create or replace PROCEDURE GET_ITEM 
+(ite_Id in NUMBER , n OUT VARCHAR2 , p OUT NUMBER  , s out DATE , e out DATE , d OUT VARCHAR2 )
+AS
+BEGIN
+SELECT name , price ,  s_date , end , description  into n , p , s , e  , d from product where id = ite_id ;
+  
+END GET_ITEM;
 --desc advertiser;
